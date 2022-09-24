@@ -43,12 +43,12 @@ body {
 .header-item {
   display: flex;
   align-items: center;
+  margin-left: 93px;
 }
 
 /* ----------------logo------------------ */
 .logo-item {
   display: block;
-  margin-right: 93px;
   margin-bottom: 20px;
   align-items: center;
 
@@ -62,6 +62,7 @@ body {
 
 .header-item .header-logo {
   margin-bottom: 0;
+  margin-right: 93px;
 }
 
 .logoStudio {
@@ -92,12 +93,19 @@ body {
 }
 
 .link-design {
+  display: block;
+  align-items: center;
   text-decoration: none;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--secondary-text-color);
+}
+
+.cards:hover,
+.cards:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 /* -------------навігація---------------- */
@@ -159,27 +167,24 @@ body {
 
 /* ------------------Герой------------------ */
 .hero {
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
-  background-color: var(--hero-bg-color);
-}
-
-/* -----------------Зображення----------- */
-.overlay {
   padding-top: 200px;
   padding-bottom: 200px;
   max-width: 1600px;
   height: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  background-image: linear-gradient(
-      rgba(47, 48, 58, 0.4),
-      rgba(47, 48, 58, 0.4)
-    ),
+
+  background-color: var(--hero-bg-color);
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)),
     url(../images/hero.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
+
+/* -----------------Зображення----------- */
 
 .hero-title {
   margin-top: 0;
@@ -219,14 +224,16 @@ body {
   font-size: 0;
 }
 
-.features-icon {
-  margin-bottom: 30px;
-  padding: 25px 100px;
+.features-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 270px;
   height: 120px;
-  text-align: center;
-  fill: var(--black);
+  margin-bottom: 30px;
+
   background-color: var(--secondary-bg-color);
+  border-radius: 4px;
 }
 
 .features {
@@ -256,7 +263,7 @@ body {
   line-height: 1.7;
 }
 
-/* Чим ми займаємося */
+/* ----------------Чим ми займаємося-------------- */
 .work-item {
   display: flex;
   justify-content: space-between;
@@ -272,7 +279,7 @@ body {
   padding-top: 0;
 }
 
-/* Наша команда */
+/* ----------------------Наша команда---------------------------- */
 .team-section {
   background-color: var(--secondary-bg-color);
 }
@@ -323,40 +330,49 @@ p {
   line-height: 1.18;
 }
 
-.team-contact {
+.social-networks {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
   max-width: 206px;
+  height: 44px;
   margin-top: 16px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.social-networks {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
 .social-networks-item {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 44px;
   height: 44px;
+}
+
+.social-networks-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  color: currentColor;
 }
 
 .team-icon {
-  fill: #afb1b8;
-  align-self: center;
+  fill: currentColor;
+  /* align-self: center; */
+
 }
 
-.social-networks-item .team-icon:hover {
-  fill: var(--white);
-}
-
-.social-networks-item:hover {
-  width: 44px;
-  height: 44px;
+.social-networks-link:hover,
+.social-networks-link:focus {
+  color: var(--white);
   background-color: var(--color-of-efect);
   border-radius: 50%;
+  width: 44px;
+  height: 44px;
 }
 
 /*-------------- Наші клієнти--------------- */
@@ -366,19 +382,32 @@ p {
   gap: 30px;
 }
 
-.client-icon {
-  margin-bottom: 30px;
-  padding: 16px 32px;
+.cliens-item {
   width: 170px;
   height: 92px;
-  text-align: center;
   border: 1px solid #afb1b8;
   border-radius: 4px;
-  fill: #afb1b8;
 }
 
-.client-icon:hover {
-  fill: var(--color-of-efect);
+.clients-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  color: #AFB1B8;
+}
+
+.client-icon {
+  fill: currentColor
+}
+
+.cliens-item:hover,
+.cliens-item:focus,
+.clients-link:hover,
+.clients-link:focus {
+  color: var(--color-of-efect);
   border-color: var(--color-of-efect);
 }
 
@@ -420,6 +449,7 @@ p {
 
 .footer-flex {
   display: flex;
+  align-items: baseline;
 }
 
 .contacts-footer {
@@ -430,7 +460,6 @@ p {
 }
 
 .footer-social {
-  margin-right: auto;
   margin-left: 70px;
 }
 
@@ -457,7 +486,8 @@ p {
   fill: var(--white);
 }
 
-.social-networks-footer:hover {
+.social-networks-footer:hover,
+.social-networks-footer:focus {
   background-color: var(--color-of-efect);
 }
 
@@ -476,6 +506,8 @@ p {
 }
 
 .button-porfolio {
+  padding: 6px 22px;
+
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
@@ -484,13 +516,13 @@ p {
   color: var(--secondary-text-color);
   border-radius: 4px;
   border: transparent;
-
-  padding: 6px 22px;
 }
 
-.button-porfolio:hover {
+.button-porfolio:hover,
+.button-porfolio:focus {
   background-color: var(--color-of-efect);
   color: var(--white);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .project-name h2 {

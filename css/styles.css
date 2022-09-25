@@ -7,6 +7,7 @@
   --hero-bg-color: #2f303a;
   --white: #ffffff;
   --black: #000000;
+  --social-network-icon: #AFB1B8;
 }
 
 body {
@@ -357,7 +358,8 @@ p {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  color: currentColor;
+  /* color: currentColor; */
+  color: var(--social-network-icon);
 }
 
 .team-icon {
@@ -385,8 +387,6 @@ p {
 .cliens-item {
   width: 170px;
   height: 92px;
-  border: 1px solid #afb1b8;
-  border-radius: 4px;
 }
 
 .clients-link {
@@ -395,16 +395,15 @@ p {
   align-items: center;
   width: 100%;
   height: 100%;
+  border: 1px solid var(--social-network-icon);
   border-radius: 4px;
-  color: #AFB1B8;
+  color: var(--social-network-icon);
 }
 
 .client-icon {
   fill: currentColor
 }
 
-.cliens-item:hover,
-.cliens-item:focus,
 .clients-link:hover,
 .clients-link:focus {
   color: var(--color-of-efect);
@@ -474,6 +473,7 @@ p {
 .social-networks-footer {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 44px;
   height: 44px;
   background-color: rgba(255, 255, 255, 0.1);
@@ -481,14 +481,22 @@ p {
 }
 
 .social-icon {
-  fill: #afb1b8;
-  align-self: center;
+  display: flex;
+  align-items: center;
   fill: var(--white);
 }
 
-.social-networks-footer:hover,
-.social-networks-footer:focus {
+.footer-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.footer-icon:hover {
   background-color: var(--color-of-efect);
+  border-radius: 50%;
 }
 
 /* --------------сторінка №2 portfolio---------- */
